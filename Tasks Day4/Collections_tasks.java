@@ -1,4 +1,5 @@
 package Day4;
+
 import java.util.*;
 
 public class Collections_tasks {
@@ -16,6 +17,7 @@ public class Collections_tasks {
         System.out.println("List after shuffling: " + ArrayList);
         System.out.println("______________________________________");
     }
+
     public static void ArrayListExercise12() {
         List<String> ArrayList = new ArrayList<String>();
         ArrayList.add("Red");
@@ -29,6 +31,7 @@ public class Collections_tasks {
         System.out.println("Portion of the list: " + sub_List);
         System.out.println("______________________________________");
     }
+
     public static void ArrayListExercise15() {
         List<String> ArrayList = new ArrayList<String>();
         ArrayList.add("Red");
@@ -69,9 +72,10 @@ public class Collections_tasks {
 
 
         Object lastElement = LinkedList.getLast();
-        System.out.println("Last Element of LinkedList: "+ lastElement);
+        System.out.println("Last Element of LinkedList: " + lastElement);
         System.out.println("______________________________________");
     }
+
     public static void LinkedListExercise12() {
         LinkedList<String> LinkedList = new LinkedList<String>();
         LinkedList.add("Red");
@@ -84,6 +88,7 @@ public class Collections_tasks {
         System.out.println("List after removing an element: " + LinkedList);
         System.out.println("______________________________________");
     }
+
     public static void LinkedListExercise15() {
         LinkedList<String> LinkedList = new LinkedList<String>();
         LinkedList.add("Red");
@@ -93,7 +98,7 @@ public class Collections_tasks {
         LinkedList.add("Black");
         System.out.println("List:" + LinkedList);
 
-        Collections.swap(LinkedList,2,3);
+        Collections.swap(LinkedList, 2, 3);
         System.out.println("List after swap:" + LinkedList);
         System.out.println("______________________________________");
     }
@@ -120,6 +125,7 @@ public class Collections_tasks {
         System.out.println();
         System.out.println("______________________________________");
     }
+
     public static void HashSetExercise12() {
         HashSet<String> HashSet = new HashSet<String>();
         HashSet.add("Red");
@@ -135,7 +141,7 @@ public class Collections_tasks {
 
     // Task using TreeSet
     public static void TreeSetExercise12() {
-        TreeSet <Integer> TreeSet = new TreeSet<Integer>();
+        TreeSet<Integer> TreeSet = new TreeSet<Integer>();
 
         TreeSet.add(227);
         TreeSet.add(300);
@@ -147,18 +153,83 @@ public class Collections_tasks {
         TreeSet.add(199);
         TreeSet.add(100);
 
-        System.out.println("Strictly greater than 12 : "+TreeSet.higher(12));
+        System.out.println("Strictly greater than 12 : " + TreeSet.higher(12));
+        System.out.println("______________________________________");
     }
 
+    // Task using Priority Queue
+    public static void PriorityQueueExercise12() {
+        PriorityQueue<Integer> PriorityQueue = new PriorityQueue<>();
+        PriorityQueue.add(20);
+        PriorityQueue.add(-2);
+        PriorityQueue.add(15);
+        PriorityQueue.add(30);
+        PriorityQueue.add(52);
+        System.out.println("Priority Queue: " + PriorityQueue);
+
+        System.out.println("Maximum Priority Queue: ");
+        Integer value = null;
+
+        while ((value = PriorityQueue.poll()) != null) {
+            System.out.print(value + "  ");
+        }
+        System.out.println();
+    }
+
+    // Task using HashMap
+    public static void HashMapExercise7() {
+        HashMap<String, Integer> HashMap = new HashMap<String, Integer>();
+        HashMap.put("Red", 1);
+        HashMap.put("Purple", 2);
+        HashMap.put("Yellow", 3);
+        HashMap.put("Cyan", 4);
+        HashMap.put("Black", 5);
+        System.out.println("HashMap:" + HashMap);
+        System.out.println("Does 'Cyan' have a key?");
+        if (HashMap.containsKey("Cyan")) {
+            System.out.println("Yes. -> " + HashMap.get("Cyan"));
+        } else {
+            System.out.println("No.");
+        }
+        System.out.println("Does 'White' have a key?");
+        if (HashMap.containsKey("White")) {
+            System.out.println("Yes. -> " + HashMap.get("White"));
+        } else {
+            System.out.println("No.");
+        }
+        System.out.println("______________________________________");
+    }
+
+    // Task using TreeMap
+    public static void TreeMapExercise15() {
+        TreeMap<Integer, String> TreeMap = new TreeMap<Integer, String>();
+
+        TreeMap.put(15, "Red");
+        TreeMap.put(25, "Purple");
+        TreeMap.put(35, "Yellow");
+        TreeMap.put(45, "Cyan");
+        TreeMap.put(55, "Black");
+        System.out.println("TreeMap: " + TreeMap);
+
+        System.out.println("Checking for 15: ");
+        System.out.println("Key(s): " + TreeMap.higherEntry(15));
+        System.out.println("Checking for 35: ");
+        System.out.println("Key(s): " + TreeMap.higherEntry(35));
+        System.out.println("Checking for 55: ");
+        System.out.println("Key(s): " + TreeMap.higherEntry(55));
+        System.out.println("______________________________________");
+    }
+
+
     public static void main(String[] args) {
-        System.out.println("TASKS USING ARRAY LIST");
+        System.out.println("TASKS USING ARRAYLIST");
         ArrayListExercise10();
         System.out.println();
         ArrayListExercise12();
         System.out.println();
         ArrayListExercise15();
 
-        System.out.println("TASKS USING LINKED LIST");
+        System.out.println("TASKS USING LINKEDLIST");
         LinkedListExercise10();
         System.out.println();
         LinkedListExercise12();
@@ -171,7 +242,20 @@ public class Collections_tasks {
         HashSetExercise12();
         System.out.println();
 
-        System.out.println("TASK USING TREE SET");
+        System.out.println("TASK USING TREESET");
         TreeSetExercise12();
+        System.out.println();
+
+        System.out.println("TASK USING PRIORITYQUEUE");
+        PriorityQueueExercise12();
+        System.out.println();
+
+        System.out.println("TASK USING HASHMAP");
+        HashMapExercise7();
+        System.out.println();
+
+        System.out.println("TASK USING TREEMAP");
+        TreeMapExercise15();
+        System.out.println();
     }
 }
