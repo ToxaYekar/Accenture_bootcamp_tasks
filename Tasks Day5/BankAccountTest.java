@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BankAccountTest {
 
     BankAccount bankAccount = new BankAccount(3000);
+    BankAccount bankAccount2 = new BankAccount(999);
 
 
     @Test
@@ -29,5 +30,15 @@ class BankAccountTest {
     @Test
     void ShouldWithdraw2000() {
         assertEquals(1000, bankAccount.withdraw(2000));
+    }
+
+    @Test
+    void ShouldNotTransferMoney() {
+        assertEquals(0, bankAccount2.transferFrom(bankAccount2, 1000));
+    }
+
+    @Test
+    void ShouldTransferMoney() {
+        assertEquals(499, bankAccount.transferFrom(bankAccount2, 500));
     }
 }
