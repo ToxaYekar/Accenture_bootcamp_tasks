@@ -39,12 +39,13 @@ class BankAccount {
     }
 
     // Transfer method
-    public void transferFrom(BankAccount bankAccount, double amount) {
+    public double transferFrom(BankAccount bankAccount, double amount) {
         if (bankAccount.balance < amount) {
             System.out.printf("Transfer cancelled. You are trying to transfer %.2f units, but only %.2f are available.", amount, bankAccount.balance);
+            return 0;
         } else {
             balance += amount;
-            bankAccount.balance -= amount;
+            return bankAccount.balance -= amount;
         }
     }
 
