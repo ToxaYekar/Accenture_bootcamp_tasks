@@ -14,20 +14,22 @@ class BankAccount {
     }
 
     // Deposit method
-    public void deposit(double amount) {
+    public double deposit(double amount) {
         if (amount <= 5000) {
-            balance += amount;
+            return balance += amount;
         } else {
             System.out.printf("Transaction cancelled. Max deposit - 5000 | Your deposit: %.2f.%n", amount);
+            return 0;
         }
     }
 
     // Withdraw method
-    public void withdraw(double amount) {
+    public double withdraw(double amount) {
         if (amount <= balance) {
-            balance -= amount;
+            return balance -= amount;
         } else {
             System.out.println("There are not enough funds.");
+            return 0;
         }
     }
 
