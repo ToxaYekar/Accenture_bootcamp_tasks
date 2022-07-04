@@ -26,6 +26,7 @@ public class ConsumingRestApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
+			log.info("Fetching API data");
 			Quote quote = restTemplate.getForObject(
 					"https://catfact.ninja/fact", Quote.class);
 			log.info(quote.toString());
