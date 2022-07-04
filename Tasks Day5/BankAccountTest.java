@@ -4,12 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 class BankAccountTest {
 
     BankAccount bankAccount = new BankAccount(3000);
     BankAccount bankAccount2 = new BankAccount(999);
-
 
     @Test
     void ShouldNotDeposit5500() {
